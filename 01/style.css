@@ -1,0 +1,23 @@
+body {
+	margin: 0 auto;
+}
+
+header, div, footer {
+	margin: 0 auto;
+	width: 500px;
+	height: 50px;
+	background-color: green;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 50px;
+}
+
+div {
+	background-color: orange;
+}
+
+footer {
+	background-color: red;
+}

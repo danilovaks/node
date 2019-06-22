@@ -1,0 +1,24 @@
+body {
+	margin: 0 auto;
+}
+
+div {
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	width: 500px;
+	height: 500px;
+	background-image: url(../img/404.jpg);
+	background-repeat: no-repeat;
+	background-position: -270px -60px;
+	border-radius: 50%;
+}
+
+p {
+	margin: 0 auto;
+	font-family: helvetica;
+	font-size: 15px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 15px;
+}
