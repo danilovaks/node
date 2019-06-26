@@ -2,7 +2,7 @@ const fs = require("fs");
 const http = require("http");
 
 
-http.createServer((request, respons)=>{
+http.createServer((request, response)=>{
     let pathname = "site/index.html";
     let path = require('path');// подключение модуля для работы с путями в файловой системе
     let mimeTypes = {
@@ -32,20 +32,22 @@ http.createServer((request, respons)=>{
     let extname, mimeType;
     //console.log("Request: " + request.url);
 
-    /*if (request.url === '/') {
+    if (request.url === '/') {
         pathname = 'site/index.html';
     } else {
         pathname = 'site' + request.url;
-    };*/
+    };
 
-    extname = path.extname(pathname);
+    extname = path.extname(pathname);//extname - метод модуля path, возвращает расширение файла
     mimeType = mimeTypes[extname];
 
     if (extname === ".ico" || extname === ".gif") {
         try {
             let img = fs.readFileSync(pathname);//синхронное чтение файла, функция возвращает прочитанные данные
             console.log(`The file ${pathname} is read and sent to the client\n`);
-            response.writeHead(200, {'Content-Type': mimeType});
+            response.writeHead(200, {
+                'Content-Type': mimeType
+            });
             response.end(img);
         } catch (e) {
             console.log('Could not find or open file for reading\n');
@@ -60,7 +62,9 @@ http.createServer((request, respons)=>{
                 response.end();
             } else {
                 console.log(`The file ${pathname} is read and sent to the client\n`);
-                response.writeHead(200, {'Content-Type': mimeType});
+                response.writeHead(200, {
+                    'Content-Type': mimeType
+                });
                 response.end(data);
             }
         });
