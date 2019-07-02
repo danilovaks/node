@@ -1,5 +1,8 @@
-const http = require('http'); 
+var http = require('http');
 
-const server = http.createServer((request, response) => { 
-	console.log("HELLO WORLD!");
+var server = http.createServer(function(req, res) {
+  res.writeHead(200);
+  res.end('Hello Http');
 });
+
+server.listen(8080);
